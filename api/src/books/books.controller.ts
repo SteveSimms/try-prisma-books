@@ -10,51 +10,49 @@ import {
 import { PrismaService } from '../prisma.service';
 import { BooksService } from './books.service';
 
-import { Book as BookModel, Author as AuthorModel, Book } from '@prisma/client';
-import { AuthorsService } from '../authors.service';
+import {
+  Book as BookModel,
+  Author as AuthorModel,
+  Book,
+  Prisma,
+} from '@prisma/client';
 
 @Controller('books')
 export class BooksController {
   constructor(
     private readonly booksService: BooksService,
-    authorService: AuthorsService,
+    private readonly prisma: PrismaService,
   ) {}
 
-  @Post()
-  createBook(
-    @Body()
-    bookData: {
-      title: string;
-      author: AuthorModel;
-      genre: string;
-      outOfPrint: boolean;
-      publisher: string;
-      publishDate: string;
-      authorId: number;
-      authorEmail: string;
-    },
-  ): Promise<BookModel> {
-    const {
-      title,
-      author,
-      authorId,
-      genre,
-      outOfPrint,
-      publisher,
-      publishDate,
-    } = bookData;
+  // @Post()
+  // createBook(
+  //   @Body()
+  //   bookData: {
+  //     title: string;
+  //     genre: string;
+  //     outOfPrint: boolean;
+  //     publisher: string;
+  //     publishDate: string;
+  //     authorId: number;
+  //   },
+  // ): Promise<BookModel> {
+  //   const { title, genre, outOfPrint, publisher, publishDate, authorId } =
+  //     bookData;
+  //   return this.booksService.createBook({
+  //     title,
+  //     genre,
+  //     outOfPrint,
+  //     publisher,
+  //     publishDate,
+  //     authorId,
+  //   });
+  // }
 
-    return this.booksService.createBook({
-      title,
-      author: {
-        connect: { email: author.email, id: authorId },
-      },
-      genre,
-      outOfPrint,
-      publisher,
-      publishDate,
-    });
+  @Post()
+  createBook(@Body() data: Book): Promise<BookModel> {
+    return this.booksService.createBook(data);
   }
+
   @Get()
   async getAllBooks(): Promise<BookModel[]> {
     return this.booksService.findAll();

@@ -13,7 +13,7 @@ datasource db {
 //Author Schema
 model Author {
   id    Int     @default(autoincrement()) @id
-  email String  @unique
+  email String?  @unique
   firstName  String?
   lastName  String?
   books Book[]
@@ -23,6 +23,8 @@ model Author {
 model Book {
   id    Int     @default(autoincrement()) @id
   title String  @unique
+  firstName  String?
+  lastName  String?
   author Author? @relation(fields: [authorId], references: [id])
   authorId Int? 
   genre String?

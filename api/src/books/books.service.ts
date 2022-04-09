@@ -6,9 +6,10 @@ import { UpdateBookDto } from './dto/update-book.dto';
 
 @Injectable()
 export class BooksService {
+  post: any;
   constructor(private prisma: PrismaService) {}
   //implemented works
-  createBook(data: Prisma.BookCreateInput): Promise<Book> {
+  createBook(data: Prisma.BookUncheckedCreateInput): Promise<Book> {
     return this.prisma.book.create({ data });
   }
   //get all books works

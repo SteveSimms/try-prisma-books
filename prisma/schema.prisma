@@ -24,10 +24,9 @@ model Book {
   id    Int     @default(autoincrement()) @id
   title String  @unique
   author Author? @relation(fields: [authorId], references: [id])
-  genre String
+  authorId Int? 
+  genre String?
   outOfPrint Boolean
   publisher String?
   publishDate String?
-  authorId Int? 
-  
 }

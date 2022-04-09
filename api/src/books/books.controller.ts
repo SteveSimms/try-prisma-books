@@ -37,21 +37,22 @@ export class BooksController {
     const {
       title,
       author,
+      authorId,
       genre,
       outOfPrint,
       publisher,
       publishDate,
-      authorId,
     } = bookData;
 
     return this.booksService.createBook({
       title,
-      // author,
+      author: {
+        connect: { email: author.email, id: authorId },
+      },
       genre,
       outOfPrint,
       publisher,
       publishDate,
-      // authorId,
     });
   }
   @Get()

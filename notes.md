@@ -44,3 +44,5 @@ authorId Int?
 Prisma automatically invokes the prisma generate command for you. In the future, you need to run this command after every change to your Prisma models to update your generated Prisma Client.
 
 The prisma generate command reads your Prisma schema and updates the generated Prisma Client library inside node_modules/@prisma/client.
+
+change your model run migrations then run prsisma generate

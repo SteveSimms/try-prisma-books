@@ -27,7 +27,7 @@ model Book {
   genre String
   outOfPrint Boolean
   publisher String?
-  publishDate DateTime
+  publishDate String?
   authorId Int? 
   
 }

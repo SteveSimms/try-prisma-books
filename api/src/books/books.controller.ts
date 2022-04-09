@@ -12,10 +12,14 @@ import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { Book as BookModel, Author as AuthorModel } from '@prisma/client';
+import { AuthorsService } from '../authors.service';
 
 @Controller('books')
 export class BooksController {
-  constructor(private readonly booksService: BooksService) {}
+  constructor(
+    private readonly booksService: BooksService,
+    authorService: AuthorsService,
+  ) {}
 
   @Post()
   create(
@@ -26,20 +30,29 @@ export class BooksController {
       genre: string;
       outOfPrint: boolean;
       publisher: string;
-      publishDate: Date;
+      publishDate: string;
       authorId: number;
       authorEmail: string;
     },
   ): Promise<BookModel> {
-    const { title, genre, outOfPrint, publishDate, authorEmail } = bookData;
-    return this.booksService.createBook({
+    const {
       title,
+      author,
       genre,
       outOfPrint,
-      author: {
-        connect: { email: authorEmail },
-      },
-      publishDate: '',
+      publisher,
+      publishDate,
+      authorId,
+    } = bookData;
+
+    return this.booksService.createBook({
+      title,
+      author,
+      genre,
+      outOfPrint,
+      publisher,
+      publishDate,
+      authorId,
     });
   }
 

@@ -13,38 +13,18 @@ export class BooksService {
   }
   //get all books
 
-  async books(params: {
-    skip?: number;
-    take?: number;
-    cursor?: Prisma.BookWhereUniqueInput;
-    where?: Prisma.BookWhereInput;
-    orderBy?: Prisma.BookOrderByWithRelationInput;
-  }): Promise<Book[]> {
-    const { skip, take, cursor, where, orderBy } = params;
-    return this.prisma.book.findMany({
-      skip,
-      take,
-      cursor,
-      where,
-      orderBy,
-    });
+  findAll() {
+    return this.prisma.book.findMany();
   }
-  // findAll() {
-  //   return `This action returns all books`;
-  // }
   //get book by id
-  async book(
-    postWhereUniqueInput: Prisma.BookWhereUniqueInput,
-  ): Promise<Book | null> {
+
+  findOne(id: number) {
     return this.prisma.book.findUnique({
-      where: postWhereUniqueInput,
+      where: { id },
     });
   }
-  // findOne(id: number) {
-  //   return `This action returns a #${id} book`;
-  // }
 
-  async updateBook(params: {
+  async update(params: {
     where: Prisma.BookWhereUniqueInput;
     data: Prisma.BookUpdateInput;
   }): Promise<Book> {
@@ -55,17 +35,13 @@ export class BooksService {
     });
   }
 
-  // update(id: number, updateBook: PrismaService) {
-  //   return `This action updates a #${id} book`;
+  // async deleteBook(where: Prisma.BookWhereUniqueInput): Promise<Book> {
+  //   return this.prisma.book.delete({
+  //     where,
+  //   });
   // }
 
-  async deleteBookt(where: Prisma.BookWhereUniqueInput): Promise<Post> {
-    return this.prisma.book.delete({
-      where,
-    });
+  remove(id: number) {
+    return this.prisma.book.delete({ where: { id } });
   }
-
-  // remove(id: number) {
-  //   return `This action removes a #${id} book`;
-  // }
 }

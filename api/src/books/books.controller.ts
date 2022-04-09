@@ -22,11 +22,11 @@ export class BooksController {
   ) {}
 
   @Post()
-  create(
+  createBook(
     @Body()
     bookData: {
       title: string;
-      author: string;
+      author: AuthorModel;
       genre: string;
       outOfPrint: boolean;
       publisher: string;
@@ -47,32 +47,38 @@ export class BooksController {
 
     return this.booksService.createBook({
       title,
-      author,
+      // author,
       genre,
       outOfPrint,
       publisher,
       publishDate,
-      authorId,
+      // authorId,
     });
   }
-
   @Get()
-  findAll() {
+  async getAllBooks(): Promise<BookModel[]> {
     return this.booksService.findAll();
   }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.booksService.findOne(+id);
+  // @Get()
+  // findAllBooks(...args: any[]) {
+  //   return this.booksService.findAllBooks(args);
+  // }
+  @Get('book/:id')
+  async getBookById(@Param('id') id: string): Promise<BookModel> {
+    return this.booksService.findOne(Number(id));
   }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.booksService.findOne(+id);
+  // }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateBookDto: PrismaService) {
-    return this.booksService.update(+id, updateBookDto);
+  update(@Param('id') id: string) {
+    // return this.booksService.update(Number(id));
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.booksService.remove(+id);
+    return this.booksService.remove(Number(id));
   }
 }

@@ -63,14 +63,14 @@ export class BooksController {
   async getBookById(@Param('id') id: string): Promise<BookModel> {
     return this.booksService.findOne({ id: +id });
   }
-  //broke
+  //works
   @Patch(':id')
-  update(@Param('id') id: string, @Body() data: Book) {
+  update(@Param('id') id: string, @Body() data: Book): Promise<BookModel> {
     return this.booksService.update({ id: +id }, data);
   }
-
+  //works
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: string): Promise<BookModel> {
     return this.booksService.remove(Number(id));
   }
 }

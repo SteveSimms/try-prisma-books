@@ -7,31 +7,30 @@ import { UpdateBookDto } from './dto/update-book.dto';
 @Injectable()
 export class BooksService {
   constructor(private prisma: PrismaService) {}
-  //implemented
+  //implemented works
   createBook(data: Prisma.BookCreateInput): Promise<Book> {
     return this.prisma.book.create({ data });
   }
-  //get all books
+  //get all books works
 
   findAll() {
     return this.prisma.book.findMany();
   }
-  //get book by id
+  //get book by id working
 
-  findOne(id: number) {
+  findOne(data: Prisma.BookWhereUniqueInput) {
     return this.prisma.book.findUnique({
-      where: { id },
+      where: data,
     });
   }
 
-  async update(params: {
-    where: Prisma.BookWhereUniqueInput;
-    data: Prisma.BookUpdateInput;
-  }): Promise<Book> {
-    const { data, where } = params;
+  async update(
+    where: Prisma.BookWhereUniqueInput,
+    data: Prisma.BookUpdateInput,
+  ): Promise<Book> {
     return this.prisma.book.update({
-      data,
       where,
+      data,
     });
   }
 

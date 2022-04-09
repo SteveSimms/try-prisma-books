@@ -9,9 +9,8 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import { BooksService } from './books.service';
-import { CreateBookDto } from './dto/create-book.dto';
-import { UpdateBookDto } from './dto/update-book.dto';
-import { Book as BookModel, Author as AuthorModel } from '@prisma/client';
+
+import { Book as BookModel, Author as AuthorModel, Book } from '@prisma/client';
 import { AuthorsService } from '../authors.service';
 
 @Controller('books')
@@ -59,22 +58,15 @@ export class BooksController {
   async getAllBooks(): Promise<BookModel[]> {
     return this.booksService.findAll();
   }
-  // @Get()
-  // findAllBooks(...args: any[]) {
-  //   return this.booksService.findAllBooks(args);
-  // }
+  //works
   @Get('book/:id')
   async getBookById(@Param('id') id: string): Promise<BookModel> {
-    return this.booksService.findOne(Number(id));
+    return this.booksService.findOne({ id: +id });
   }
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.booksService.findOne(+id);
-  // }
-
+  //broke
   @Patch(':id')
-  update(@Param('id') id: string) {
-    // return this.booksService.update(Number(id));
+  update(@Param('id') id: string, @Body() data: Book) {
+    return this.booksService.update({ id: +id }, data);
   }
 
   @Delete(':id')

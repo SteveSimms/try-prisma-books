@@ -31,4 +31,5 @@ model Book {
   outOfPrint Boolean
   publisher String?
   publishDate String?
+  imageUrl String?
 }

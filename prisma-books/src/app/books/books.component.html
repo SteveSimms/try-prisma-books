@@ -1,1 +1,12 @@
 <p>books works!</p>
+
+<main>
+  <section>
+    <h1>Books</h1>
+    <div>
+      <div *ngFor="let book of books">
+        <h2>{{ book.title }}</h2>
+      </div>
+    </div>
+  </section>
+</main>

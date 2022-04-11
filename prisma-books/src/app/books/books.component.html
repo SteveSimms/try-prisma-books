@@ -1,32 +1,25 @@
-<p>books works!</p>
-
 <main>
   <section>
-    <h1>Books</h1>
-    <div>
-      <div *ngFor="let book of books">
-        <h2>{{ book.title }}</h2>
-      </div>
-    </div>
-  </section>
-  <div class="row">
-    <div class="col-sm-4" *ngFor="let book of books">
-      <div class="card mt-5" style="width: 400px">
-        <img
-          class="card-img-top"
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8WhC78g_-shmewmeBClW0QHaHV%26pid%3DApi&f=1"
-          alt="Card image"
-        />
-        <div class="card-body">
-          <h4 class="card-title">{{ book.title }}</h4>
-          <p class="card-text">{{ book.firstName }} {{ book.lastName }}</p>
-          <p class="card-text"></p>
-          <p class="card-text">Some example text.</p>
-          <a href="#" class="btn btn-primary">See Profile</a>
+    <div class="row">
+      <!-- <div class="col-sm-4 md-4 lg-2" *ngFor="let book of books"> -->
+      <div class="col-4" *ngFor="let book of books">
+        <div class="card mt-5" style="width: 400px">
+          <img
+            class="card-img-top img-fluid"
+            src="{{ book.imageUrl }}"
+            alt="Card image"
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{ book.title }}</h4>
+            <p class="card-text">{{ book.firstName }} {{ book.lastName }}</p>
+            <p class="card-text">{{ book.genre }}</p>
+            <p class="card-text">{{ book.description.slice(0, 100) }}</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <button (click)="getBooksFromServer()" class="btn-primary">get books</button>
+  <!-- <button (click)="getBooksFromServer()" class="btn-primary">get books</button> -->
 </main>

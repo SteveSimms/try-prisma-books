@@ -8,7 +8,9 @@ const log = console.log;
 })
 export class BooksComponent implements OnInit {
   books: any = [];
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+    this.getBooksFromServer();
+  }
 
   getBooksFromServer() {
     this.httpClient

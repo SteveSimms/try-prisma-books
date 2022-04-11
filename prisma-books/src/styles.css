@@ -19,3 +19,7 @@
   height: 30rem;
   object-fit: cover;
 }
+
+.card-body {
+  padding: 0.25rem;
+}

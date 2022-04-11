@@ -6,6 +6,7 @@ front end
 ## [] Books component Acceptance criteria
 
 [x] Display books from db in a card grid layout with image pending
+[] Add padding to the bottom row of cards
 [] add the appropriate imgs to cards in the db
 [!]when rendering dynamic cards make sure to put the loop on the grid sizing of the cards like
 
@@ -17,3 +18,4 @@ front end
 
 back end
 [x] add image to Books model
+[] add description field to books model

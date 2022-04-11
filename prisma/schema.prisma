@@ -32,4 +32,5 @@ model Book {
   publisher String?
   publishDate String?
   imageUrl String?
+  description String?
 }

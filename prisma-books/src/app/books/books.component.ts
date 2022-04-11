@@ -21,5 +21,9 @@ export class BooksComponent implements OnInit {
       });
   }
 
+  seeMoreDescription() {
+    this.books.description;
+  }
+
   ngOnInit(): void {}
 }

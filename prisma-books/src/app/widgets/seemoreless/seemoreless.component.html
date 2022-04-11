@@ -1,0 +1,16 @@
+<!-- show complete text -->
+<span *ngIf="text.length <= wordLimit">{{ text }}</span>
+<!-- show truncated text -->
+<span *ngIf="text.length > wordLimit && !showMore">
+  {{ text.substring(0, wordLimit) }} ...
+  <a type="button" class="btn-primary"
+    ><span (click)="showMore = true">show more</span></a
+  >
+</span>
+<!-- reverse show more -->
+<span *ngIf="text.length > wordLimit && showMore">
+  {{ text }}
+  <a type="button" class="btn-primary"
+    ><span (click)="showMore = false"> show less</span></a
+  >
+</span>

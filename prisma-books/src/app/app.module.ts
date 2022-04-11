@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
+import { SeemorelessComponent } from './widgets/seemoreless/seemoreless.component';
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent],
+  declarations: [AppComponent, BooksComponent, SeemorelessComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,6 +8,7 @@ front end
 [x] Display books from db in a card grid layout with image pending
 [] Add padding to the bottom row of cards
 [] add the appropriate imgs to cards in the db
+[] google how to add imag from form and how to convert it to a byte array in the db for storage
 [!]when rendering dynamic cards make sure to put the loop on the grid sizing of the cards like
 
 <div class="col-sm-4" \*ngFor="let book of books">

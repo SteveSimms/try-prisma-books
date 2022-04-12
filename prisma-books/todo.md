@@ -45,7 +45,7 @@ front end
 ## colors
 
 [x] add as background color color: 'rgb(148 163 184/var(--tw-text-opacity))' || decoded to use a png color gradient from a templatre that I plan to implement
-[] sky id the place holder secondary color
+[x] sky id the place holder secondary color
 
 [] google how to add image from form and how to convert it to a byte array in the db for storage
 [!]when rendering dynamic cards make sure to put the loop on the grid sizing of the cards like

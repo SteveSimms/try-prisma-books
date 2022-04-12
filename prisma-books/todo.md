@@ -10,10 +10,16 @@ front end
 [x] add the appropriate imgs to cards in the db we are using img url for now
 [!x] fixed padding issue in rendered cards note: always inspect the dom styles to see what is actually being applied to the element and then fix the issue by applying manual styles if need be
 [x] use array.slice(0,150) so the card sizes are uniform
-[] add ...see more and see ...less for description information if description is longer than 150 characters description.slice(0,150) + '...see more' else description is 150 characters or more show see less
+[x] add ...see more and see ...less for description information if description is longer than 150 characters description.slice(0,150) + '...see more' else description is 150 characters or more show see less
 [] add a bacground color and pick secondary and tersiary colors for the cards
 [] add a hover effect for the cards
 [] add a hover effect for the cards
+
+## colors
+
+[] add as background color color: 'rgb(148 163 184/var(--tw-text-opacity))'
+[] sky id the place holder secondary color
+
 [] google how to add image from form and how to convert it to a byte array in the db for storage
 [!]when rendering dynamic cards make sure to put the loop on the grid sizing of the cards like
 

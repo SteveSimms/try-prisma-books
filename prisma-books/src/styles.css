@@ -15,6 +15,9 @@
   .bg-color2 {
     background-color: #6696e4;
   }
+  .bg-img {
+    background-image: url('/assets/header.png');
+  }
 }
 
 /* .container {

@@ -3,13 +3,16 @@
     <div class="row">
       <div class="col-sm-4 md-4 lg-2" *ngFor="let book of books">
         <!-- <div class="col-4" *ngFor="let book of books"> -->
-        <div class="card mt-5 card-body-animate shadow-lg" style="width: 400px">
+        <div
+          class="card mt-5 card-body-animate shadow-lg primary-color"
+          style="width: 400px"
+        >
           <img
             class="card-img-top img-fluid"
             src="{{ book.imageUrl }}"
             alt="Card image"
           />
-          <div class="card-body">
+          <div class="card-body block text-blue-300 py-2 font-bold mb-2">
             <h4 class="card-title">{{ book.title }}</h4>
             <p class="card-text">{{ book.firstName }} {{ book.lastName }}</p>
             <p class="card-text">{{ book.genre }}</p>

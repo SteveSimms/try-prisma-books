@@ -22,9 +22,10 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, SeemorelessComponent],
+  declarations: [AppComponent, BooksComponent, SeemorelessComponent, FilterPipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, MdbAccordionModule, MdbCarouselModule, MdbCheckboxModule, MdbCollapseModule, MdbDropdownModule, MdbFormsModule, MdbModalModule, MdbPopoverModule, MdbRadioModule, MdbRangeModule, MdbRippleModule, MdbScrollspyModule, MdbTabsModule, MdbTooltipModule, MdbValidationModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

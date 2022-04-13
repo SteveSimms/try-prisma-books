@@ -10,9 +10,20 @@ const log = console.log;
 export class BooksComponent implements OnInit {
   books: any = [];
   // filterdSearch: string = '';
-  filteredString: string = '';
+  // filteredString: string = this.books.filter((book: any) => {
+  //   let filteredBook = book.title
+  //     .toLowerCase()
+  //     .includes(this.filteredString.toLowerCase());
+  //   console.log(filteredBook);
+  //   return filteredBook;
+  // });
+
+  searchInput: any = '';
+  filterString: any = '';
+
   constructor(private httpClient: HttpClient) {
     this.getBooksFromServer();
+    this.setInputValue();
   }
 
   getBooksFromServer() {
@@ -28,5 +39,15 @@ export class BooksComponent implements OnInit {
     this.books.description;
   }
 
+  setInputValue() {
+    this.books.filter((book: any) => {
+      let filteredBook = book.title
+        .toLowerCase()
+        .includes(this.searchInput.toLowerCase());
+      console.log(filteredBook);
+      return filteredBook;
+    });
+    return this.searchInput;
+  }
   ngOnInit(): void {}
 }

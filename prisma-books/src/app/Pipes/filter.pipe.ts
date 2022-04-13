@@ -9,22 +9,29 @@ export class FilterPipe implements PipeTransform {
       return value;
     }
 
-    const booksPool = [];
+    const booksPool: any = [];
+
+    //refine filter to filter tthe cards as I type
     for (const book of value) {
       if (
-        book['title'] === filterString ||
-        book['firstName'] === filterString ||
-        book['lastName'] === filterString ||
-        book['genre'] === filterString ||
-        book['title'] === filterString.toLocaleLowerCase() ||
-        book['firstName'] === filterString.toLocaleLowerCase() ||
-        book['lastName'] === filterString.toLocaleLowerCase() ||
-        book['genre'] === filterString.toLocaleLowerCase()
+        book.title.toLocaleLowerCase() === filterString ||
+        book.title === filterString.toLocaleLowerCase() ||
+        book.title.includes(filterString) ||
+        filterString === '' ||
+        book.firstName.toLocaleLowerCase() === filterString ||
+        book.firstName === filterString.toLocaleLowerCase() ||
+        book.firstName.includes(filterString) ||
+        book.lastName.toLocaleLowerCase() === filterString ||
+        book.lastName === filterString.toLocaleLowerCase() ||
+        book.lastName.includes(filterString) ||
+        book.genre.toLocaleLowerCase() === filterString ||
+        book.genre.includes(filterString) ||
+        book.genre === filterString.toLocaleLowerCase()
       ) {
         booksPool.push(book);
       }
-      console.log('filter pipe', book.title);
     }
+
     return booksPool;
   }
 }

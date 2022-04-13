@@ -9,15 +9,19 @@
     </span>
 
     <input
+      [(ngModel)]="filteredString"
       class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-      id="emailaddress"
+      id="search"
       type="text"
       placeholder="Search for books..."
     />
   </label>
   <section class="">
     <div class="row">
-      <div class="col-sm-4 md-4 lg-4" *ngFor="let book of books">
+      <div
+        class="col-sm-4 md-4 lg-4"
+        *ngFor="let book of books | filter: filteredString"
+      >
         <!-- <div class="col-4" *ngFor="let book of books"> -->
         <div
           class="card mt-5 card-body-animate shadow-lg primary-color"

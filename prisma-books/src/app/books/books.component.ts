@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 const log = console.log;
 @Component({
   selector: 'app-books',
@@ -8,6 +9,8 @@ const log = console.log;
 })
 export class BooksComponent implements OnInit {
   books: any = [];
+  // filterdSearch: string = '';
+  filteredString: string = '';
   constructor(private httpClient: HttpClient) {
     this.getBooksFromServer();
   }

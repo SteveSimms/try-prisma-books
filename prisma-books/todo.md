@@ -12,13 +12,26 @@ front end
 [x] use array.slice(0,150) so the card sizes are uniform
 [x] add ...see more and see ...less for description information if description is longer than 150 characters description.slice(0,150) + '...see more' else description is 150 characters or more show see less
 [x] add a bacground color and pick secondary and tersiary colors for the cards
-[] carve template into project
-[] add a hover effect for the cards use the hover and togglr animations from template
+[x] carve template into project
+[x] add a hover effect for the cards use the hover and togglr animations from template
 [] add CRUD functionality for books
+[]CREATE
+[]READ
+[] add a search bar to filter books by title ... pending
+[] add a search bar to filter books by author
+[] add a search bar to filter books by genre
+
+[] add a search bar to filter books by createdAt
+[] add a search bar to filter books by updatedAt
+[]UPDATE
+[]DELETE
+
 [] figure out flow for the app
 
 [] add a search bar to filter books by title
 [] add a search bar to filter books by author
+[] add pagination for books
+?[] add a sort by dropdown to sort books by title or author
 
 ## AUTH component Acceptance criteria FLOW
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 const log = console.log;
 @Component({
@@ -8,7 +9,7 @@ const log = console.log;
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit {
-  books: any = [];
+  @Input() books: any = [];
   // filterdSearch: string = '';
   // filteredString: string = this.books.filter((book: any) => {
   //   let filteredBook = book.title
@@ -18,10 +19,13 @@ export class BooksComponent implements OnInit {
   //   return filteredBook;
   // });
 
-  searchInput: any = '';
-  filterString: any = '';
+  @Input() searchInput: any = '';
+  @Input() filterString: any = '';
 
-  constructor(private httpClient: HttpClient) {
+  constructor(
+    private httpClient: HttpClient,
+    private activatedRoute: ActivatedRoute,
+  ) {
     this.getBooksFromServer();
     this.setInputValue();
   }
@@ -49,5 +53,24 @@ export class BooksComponent implements OnInit {
     });
     return this.searchInput;
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['searchTerm']) {
+        this.books.filter(
+          (book: any) =>
+            book.title
+              .toLowerCase()
+              .includes(params['searchTerm'].toLowerCase()) ||
+            book.firstName
+              .toLowerCase()
+              .includes(params['searchTerm'].toLowerCase()) ||
+            book.lastName
+              .toLowerCase()
+              .includes(params['searchTerm'].toLowerCase()),
+        );
+      } else {
+        this.books;
+      }
+    });
+  }
 }

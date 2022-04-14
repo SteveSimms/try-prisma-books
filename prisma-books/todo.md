@@ -16,10 +16,16 @@ front end
 [x] add a hover effect for the cards use the hover and togglr animations from template
 [] add CRUD functionality for books
 []CREATE
+[x] generate create book form
+[x] create a form turn form into a modal
+[] make post request to the server
 []READ
-[] add a search bar to filter books by title ... pending
-[] add a search bar to filter books by author
-[] add a search bar to filter books by genre
+[x] add a search bar to filter books by title ... pending
+[] break search into a reusable widget
+[x] add a search bar to filter books by author
+[x] add a search bar to filter books by genre
+
+[] add the search route into the app.routing.module
 
 [] add a search bar to filter books by createdAt
 [] add a search bar to filter books by updatedAt

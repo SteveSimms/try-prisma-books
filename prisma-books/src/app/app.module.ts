@@ -24,6 +24,9 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
+import { HeaderComponent } from './header/header.component';
+import { CreateComponent } from './books/create/create.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { FormsModule } from '@angular/forms';
     BooksComponent,
     SeemorelessComponent,
     FilterPipe,
+    SearchComponent,
+    HeaderComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,

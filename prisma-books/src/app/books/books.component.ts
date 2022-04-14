@@ -21,7 +21,7 @@ export class BooksComponent implements OnInit {
     this.getBooksFromServer();
     this.setInputValue();
   }
-
+  //CRUD OPERATIONS
   getBooksFromServer() {
     this.httpClient
       .get<any>('http://localhost:3000/books')
@@ -31,9 +31,15 @@ export class BooksComponent implements OnInit {
       });
   }
 
+  //POST REQUEST
   addToReadinglist(book: any) {
     this.readingListItem.push(book);
     console.log('reading list', this.readingListItem);
+  }
+
+  //Patch Request
+  editReadinglist(book: any) {
+    console.log('editing.....', book);
   }
   seeMoreDescription() {
     this.books.description;

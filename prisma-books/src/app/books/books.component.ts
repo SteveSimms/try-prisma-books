@@ -10,7 +10,7 @@ const log = console.log;
 })
 export class BooksComponent implements OnInit {
   @Input() books: any = [];
-
+  readingListItem: any = [];
   @Input() searchInput: any = '';
   @Input() filterString: any = '';
 
@@ -31,6 +31,10 @@ export class BooksComponent implements OnInit {
       });
   }
 
+  addToReadinglist(book: any) {
+    this.readingListItem.push(book);
+    console.log('reading list', this.readingListItem);
+  }
   seeMoreDescription() {
     this.books.description;
   }

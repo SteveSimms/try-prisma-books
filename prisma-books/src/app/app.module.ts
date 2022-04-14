@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateComponent } from './books/create/create.component';
+import { CreateReadingListComponent } from './widgets/create-reading-list/create-reading-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CreateComponent } from './books/create/create.component';
     SearchComponent,
     HeaderComponent,
     CreateComponent,
+    CreateReadingListComponent,
   ],
   imports: [
     BrowserModule,

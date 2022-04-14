@@ -10,14 +10,6 @@ const log = console.log;
 })
 export class BooksComponent implements OnInit {
   @Input() books: any = [];
-  // filterdSearch: string = '';
-  // filteredString: string = this.books.filter((book: any) => {
-  //   let filteredBook = book.title
-  //     .toLowerCase()
-  //     .includes(this.filteredString.toLowerCase());
-  //   console.log(filteredBook);
-  //   return filteredBook;
-  // });
 
   @Input() searchInput: any = '';
   @Input() filterString: any = '';

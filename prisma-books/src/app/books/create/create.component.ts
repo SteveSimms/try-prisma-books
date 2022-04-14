@@ -8,7 +8,21 @@ import { Modal } from 'bootstrap';
 export class CreateComponent implements OnInit {
   bookModal: Modal | undefined;
   constructor() {}
-
+  formInputTitle: string = '';
+  formInputfirstName: string = '';
+  formInputlastName: string = '';
+  formInputDescription: string = '';
+  formInputGenre: string = '';
+  formInputYearPublished: string = '';
+  //Turn this into the correct data shaped interface
+  formInput: any = {
+    title: '',
+    firstName: '',
+    lastName: '',
+    description: '',
+    genre: '',
+    yearPublished: '',
+  };
   createBook() {}
 
   onOpenModal() {

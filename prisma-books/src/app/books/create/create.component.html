@@ -31,7 +31,7 @@
         ></button>
       </div>
       <div class="modal-body relative p-4 bg-indigo-500 opacity-75">
-        <form
+        <div
           class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4"
         >
           <div class="mb-4">
@@ -39,9 +39,10 @@
               class="block text-blue-300 py-2 font-bold mb-2"
               for="booktitle"
             >
-              Book Title
+              Book Title : {{ formInputTitle }}
             </label>
             <input
+              [(ngModel)]="formInputTitle"
               class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
               id="bookTitle"
               type="text"
@@ -53,11 +54,12 @@
               class="block text-blue-300 py-2 font-bold mb-2"
               for="booktitle"
             >
-              Authors Name
+              Authors Name : {{ formInputfirstName }} {{ formInputlastName }}
             </label>
             <div class="grid grid-cols-2 gap-4">
               <div class="form-group mb-6">
                 <input
+                  [(ngModel)]="formInputfirstName"
                   type="text"
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   id="exampleInput123"
@@ -67,6 +69,7 @@
               </div>
               <div class="form-group mb-6">
                 <input
+                  [(ngModel)]="formInputlastName"
                   type="text"
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   id="exampleInput124"
@@ -78,10 +81,11 @@
           </div>
           <div class="mb-4">
             <label class="block text-blue-300 py-2 font-bold mb-2" for="genre">
-              Genre
+              Genre : {{ formInputGenre }}
             </label>
             <div class="form-group mb-6">
               <input
+                [(ngModel)]="formInputGenre"
                 type="genre"
                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 id="exampleInput126"
@@ -94,11 +98,12 @@
               class="block text-blue-300 py-2 font-bold mb-2"
               for="description"
             >
-              Description
+              Description : {{ formInputDescription }}
             </label>
             <div class="form-group mb-6">
               <div class="form-group mb-6">
                 <textarea
+                  [(ngModel)]="formInputDescription"
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   id="exampleFormControlTextarea13"
                   rows="3"
@@ -109,14 +114,15 @@
           </div>
           <div class="mb-4">
             <label class="block text-blue-300 py-2 font-bold mb-2" for="year">
-              Year Published
+              Year Published : {{ formInputYearPublished }}
             </label>
             <div class="form-group mb-6">
               <input
-                type="password"
+                [(ngModel)]="formInputYearPublished"
+                type="date"
                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 id="exampleInput126"
-                placeholder="Password"
+                placeholder="Published Year"
               />
             </div>
           </div>
@@ -126,10 +132,10 @@
               class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
               type="button"
             >
-              Sign Up
+              Submit
             </button>
           </div>
-        </form>
+        </div>
       </div>
       <div
         class="flex flex-shrink-0 flex-wrap items-center p-4 bg-indigo-500 opacity-75"

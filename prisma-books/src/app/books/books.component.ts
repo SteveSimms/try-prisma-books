@@ -41,6 +41,10 @@ export class BooksComponent implements OnInit {
   editReadinglist(book: any) {
     console.log('editing.....', book);
   }
+  //DELETE REQUEST
+  deleteBook(book: any) {
+    console.log('deleting.....', book);
+  }
   seeMoreDescription() {
     this.books.description;
   }

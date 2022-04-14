@@ -15,7 +15,7 @@ front end
 [x] carve template into project
 [x] add a hover effect for the cards use the hover and togglr animations from template
 [] add CRUD functionality for books
-[]CREATE
+[]CREATE ...in progress
 [x] generate create book form
 [x] create a form turn form into a modal
 [] make post request to the server

@@ -19,6 +19,7 @@ front end
 [x] generate create book form
 [x] create a form turn form into a modal
 [] make post request to the server
+[] add img upload button and image url fields to form
 []READ
 [x] add a search bar to filter books by title ... pending
 [] break search into a reusable widget

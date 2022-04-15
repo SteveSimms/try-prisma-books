@@ -27,7 +27,11 @@
         *ngFor="let book of books | filter: filterString"
       >
         <div
-          class="card mt-5 card-body-animate shadow-lg primary-color flex justify-center card mt-5"
+          class="card mt-5 card-body-animate shadow-lg primary-color flex justify-center card mt-5 block py-5"
+          block
+          text-blue-300
+          py-2
+          font-bold
           style="width: 400px"
         >
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
@@ -39,7 +43,10 @@
             />
           </a>
           <!-- <section class="card-body block text-blue-300 py-2 font-bold"> -->
-          <h4 class="card-title">{{ book.title }}</h4>
+
+          <h4 class="card-title">
+            {{ book.title }}
+          </h4>
           <p class="card-text">{{ book.firstName }} {{ book.lastName }}</p>
           <p class="card-text">{{ book.genre }}</p>
           <p class="card-text">
@@ -50,6 +57,9 @@
             <!-- {{ book.description }} -->
           </p>
           <!-- Slice to 100 characters -->
+          <div class="flex justify-center">
+            <div></div>
+          </div>
           <a
             (click)="addToReadinglist(book)"
             href="#"

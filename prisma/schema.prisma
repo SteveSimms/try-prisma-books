@@ -10,6 +10,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//User Model
+model User {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  firstName String?
+   lastName  String?
+
+  email String @unique
+  hash String
+  hashedRt String?
+
+  readlingList ReadingList[]
+@@map("users")
+}
+
+model ReadingList {
+bookId Int @unique
+  id    Int     @default(autoincrement()) @id
+  title String  @unique
+  firstName  String?
+  lastName  String?
+ email String? 
+  authorId Int? 
+  genre String?
+  outOfPrint Boolean
+  publisher String?
+  publishDate String?
+  imageUrl String?
+  description String?
+
+  user User[]
+}
 //Author Schema
 model Author {
   id    Int     @default(autoincrement()) @id
@@ -34,3 +67,6 @@ model Book {
   imageUrl String?
   description String?
 }
+
+
+

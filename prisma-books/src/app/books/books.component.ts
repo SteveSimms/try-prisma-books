@@ -21,7 +21,8 @@ export class BooksComponent implements OnInit {
     this.getBooksFromServer();
     this.setInputValue();
   }
-  //CRUD OPERATIONS
+  //CRUD OPERATIONS -may be changed to get readingList from server organize an authenticated user's personal library and modify it as well.
+
   getBooksFromServer() {
     this.httpClient
       .get<any>('http://localhost:3000/books')
@@ -31,7 +32,7 @@ export class BooksComponent implements OnInit {
       });
   }
 
-  //POST REQUEST
+  //POST REQUEST pending....(add reading list to users model and create a relationship between user and book)
   addToReadinglist(book: any) {
     this.readingListItem.push(book);
     console.log('reading list', this.readingListItem);

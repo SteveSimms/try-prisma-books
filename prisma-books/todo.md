@@ -46,6 +46,7 @@ front end
 [] verify usert is authenticated
 [] User can logout
 [] User can change password
+[] add reading list to users model and create a relationship between user and book
 
 ## CRUD FLOW SKETCH user data should come from db default data should comne from good reads api and kindle api
 

@@ -49,27 +49,30 @@ export class BooksController {
   // }
 
   @Post()
-  createBook(@Body() data: Book): Promise<BookModel> {
-    return this.booksService.createBook(data);
+  async createBook(@Body() data: Book): Promise<BookModel> {
+    return await this.booksService.createBook(data);
   }
 
   @Get()
   async getAllBooks(): Promise<BookModel[]> {
-    return this.booksService.findAll();
+    return await this.booksService.findAll();
   }
   //works
   @Get('book/:id')
   async getBookById(@Param('id') id: string): Promise<BookModel> {
-    return this.booksService.findOne({ id: +id });
+    return await this.booksService.findOne({ id: +id });
   }
   //works
   @Patch(':id')
-  update(@Param('id') id: string, @Body() data: Book): Promise<BookModel> {
-    return this.booksService.update({ id: +id }, data);
+  async update(
+    @Param('id') id: string,
+    @Body() data: Book,
+  ): Promise<BookModel> {
+    return await this.booksService.update({ id: +id }, data);
   }
   //works
   @Delete(':id')
-  remove(@Param('id') id: string): Promise<BookModel> {
-    return this.booksService.remove(Number(id));
+  async remove(@Param('id') id: string): Promise<BookModel> {
+    return await this.booksService.remove(Number(id));
   }
 }

@@ -9,18 +9,18 @@ export class BooksService {
   post: any;
   constructor(private prisma: PrismaService) {}
   //implemented works
-  createBook(data: Prisma.BookUncheckedCreateInput): Promise<Book> {
-    return this.prisma.book.create({ data });
+  async createBook(data: Prisma.BookUncheckedCreateInput): Promise<Book> {
+    return await this.prisma.book.create({ data });
   }
   //get all books works
 
-  findAll() {
-    return this.prisma.book.findMany();
+  async findAll() {
+    return await this.prisma.book.findMany();
   }
   //get book by id working
 
-  findOne(data: Prisma.BookWhereUniqueInput) {
-    return this.prisma.book.findUnique({
+  async findOne(data: Prisma.BookWhereUniqueInput) {
+    return await this.prisma.book.findUnique({
       where: data,
     });
   }
@@ -29,13 +29,13 @@ export class BooksService {
     where: Prisma.BookWhereUniqueInput,
     data: Prisma.BookUpdateInput,
   ): Promise<Book> {
-    return this.prisma.book.update({
+    return await this.prisma.book.update({
       where,
       data,
     });
   }
 
-  remove(id: number) {
-    return this.prisma.book.delete({ where: { id } });
+  async remove(id: number) {
+    return await this.prisma.book.delete({ where: { id } });
   }
 }

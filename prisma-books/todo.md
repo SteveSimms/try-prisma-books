@@ -40,13 +40,13 @@ front end
 [] add pagination for books
 ?[] add a sort by dropdown to sort books by title or author
 
-## AUTH component Acceptance criteria FLOW
+## AUTH component Acceptance criteria FLOW in progress
 
 [] User logs in using jwt or google or other providers like kindle
-[] verify usert is authenticated
+[] verify user is authenticated
 [] User can logout
 [] User can change password
-[] add reading list to users model and create a relationship between user and book
+[x] add reading list to users model and create a relationship between user and book
 
 ## CRUD FLOW SKETCH user data should come from db default data should comne from good reads api and kindle api
 
